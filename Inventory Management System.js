@@ -14,3 +14,17 @@ const inventory = [
     { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 }
     
     ];
+
+// Create a Function to Display Product Details:
+
+function displayProductDetails(product) {
+console.log(`Product Name: ${product.name}, Product Price: $${product.price}, Product Quantity: ${product.quantity}'); `)
+}
+
+// Using if Statements to check the stock status:
+
+if (product.quantity <= product.lowStockLevel) {
+    console.log("Stock Status: Low Stock")
+} else {
+   console.log("Stock Status:In Stock");
+}
