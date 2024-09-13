@@ -1,7 +1,7 @@
-// Create an Inventory Array of Product Objects:
+// Task 1: Create an Inventory Array of Product Objects:
 // Defining product details.
 
-const inventory = [
+let inventory = [
 
     { name: 'Laptop', price: 1200, quantity: 10, lowStockLevel: 3 },
     
@@ -15,10 +15,10 @@ const inventory = [
     
     ];
 
-// Create a Function to Display Product Details:
+// Task 2: Create a Function to Display Product Details:
 
 function displayProductDetails(product) {
-console.log(`Product Name: ${product.name}, Product Price: $${product.price}, Product Quantity: ${product.quantity}'); `)
+console.log(`Product Name: ${product.name}, Product Price: $${product.price}, Product Quantity: ${product.quantity}); `)
 }
 
 // Using if Statements to check the stock status:
@@ -28,3 +28,25 @@ if (product.quantity <= product.lowStockLevel) {
 } else {
    console.log("Stock Status:In Stock");
 }
+
+// Task 3: Create a Function to Update Product Stock After Sales:
+
+function updateStock (product,unitsSold)
+    product.quantity -= unitSold;
+    
+if(product.quantity<= 0) {
+    console.log(`${product.name} out of stock`);
+} else if {
+(product.quantity <= product.lowStockLevel)
+ console.log(`${product.name} low in stock`)
+} 
+
+//Updatedstock- Substracting unit sold from current product quantity
+// then created if statement if equal or zero than out of stock.
+// else if less than product quantity low in stock.
+
+
+
+
+// checking the product is now low stock or out of stock:
+
