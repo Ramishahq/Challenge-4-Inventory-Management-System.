@@ -31,22 +31,29 @@ if (product.quantity <= product.lowStockLevel) {
 
 // Task 3: Create a Function to Update Product Stock After Sales:
 
-function updateStock (product,unitsSold)
-    product.quantity -= unitSold;
-    
-if(product.quantity<= 0) {
+function updateStock (product,unitsSold) {
+ product.quantity -= unitSold;
+    if(product.quantity<= 0) {
     console.log(`${product.name} out of stock`);
 } else if {
 (product.quantity <= product.lowStockLevel)
  console.log(`${product.name} low in stock`)
 } 
+}
 
 //Updatedstock- Substracting unit sold from current product quantity
 // then created if statement if equal or zero than out of stock.
 // else if less than product quantity low in stock.
 
+// Task 4 Create a Function to Check Low Stock Products:
 
+ function checkLowStock (inventory) {
+inventory.forEach (products) => {
+    if(product.quantity<= product.lowSTockLevels)
+console.log(`${product.name} low in stock`);
+}
+ }
+// created a checkLowStock funstion for inventory of each product.
+// if the product quantity has low stock level console.log will give result low in stock.
 
-
-// checking the product is now low stock or out of stock:
 
