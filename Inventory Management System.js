@@ -41,7 +41,9 @@ if (product.quantity <= product.lowStockLevel) {
 
 function updateStock (product,unitsSold) {
  product.quantity -= unitsSold;
-    
+ if (product.quantity < 0) {
+    product.quantity = 0; // Ensureing the total quantity does not go negative
+}
  if(product.quantity<= 0) {
 
 return`${product.name} out of stock`;
@@ -49,6 +51,8 @@ return`${product.name} out of stock`;
  } else if (product.quantity <= product.lowStockLevel) {
  
 return`${product.name} low in stock`
+ }else {
+    return `${product.name} stock updated`;
  }
 } 
 
@@ -91,6 +95,22 @@ function calculateInventoryValue (inventory) {
 
 }
 //testing the function
-console.log(`The total value of is $${calculateInventoryValue(inventory)}.`) //outputs message with $22550 as the value
+console.log(`The total value of is $${calculateInventoryValue(inventory)}.`) //outputs message with $7050 as the value
 
-// 
+// Task-6 Create a Function to Process a Sale
+
+
+
+function processSale (productName,unitsSold ) {
+    let product = inventory.find(product => product.name === productName);
+
+// if product found update stock
+if (product){
+    return updateStock (product,unitsSold);
+
+} else {
+    return `error:${productName}the product is not in the inventory.`;
+}
+}
+let result= processSale('Smartphone',5);
+console.log(result);
