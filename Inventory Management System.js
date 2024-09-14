@@ -95,7 +95,7 @@ function calculateInventoryValue (inventory) {
 
 }
 //testing the function
-console.log(`The total value of is $${calculateInventoryValue(inventory)}.`) //outputs message with $7050 as the value
+console.log(`The total value of inventory is $${calculateInventoryValue(inventory)}.`) //outputs The total value of is $7050 
 
 // Task-6 Create a Function to Process a Sale
 
