@@ -18,7 +18,7 @@ let inventory = [
 // Task 2: Create a Function to Display Product Details:
 
 function displayProductDetails(product) {
-console.log(`Product Name: ${product.name}, Product Price: $${product.price}, Product Quantity: ${product.quantity}); `)
+console.log(`Product Name: ${product.name}, Product Price: $${product.price}, Product Quantity: ${product.quantity}; `)
 
 
 // Using if Statements to check the stock status:
@@ -44,7 +44,7 @@ function updateStock (product,unitsSold) {
  if (product.quantity < 0) {
     product.quantity = 0; // Ensureing the total quantity does not go negative
 }
- if(product.quantity<= 0) {
+ if(product.quantity === 0) {
 
 return`${product.name} out of stock`;
 
@@ -71,7 +71,7 @@ console.log(updateStock(inventory[1],4));// output Smartphone out of stock
 
  function checkLowStock (inventory) {
 inventory.forEach( (product) => {
-    if(product.quantity<= product.lowSTockLevel) {
+    if(product.quantity<= product.lowStockLevel) {
 return (`${product.name} low in stock`);
 }
  });
@@ -82,10 +82,6 @@ return (`${product.name} low in stock`);
 // logged the function for low stock level 
 console.log(checkLowStock (inventory)); 
 
-//Create a function to calculate total inventory value:
-function calculateInventoryValue (total,Inventory) {
-
-}
 
 // Task 5 Create a Function to Calculate Total Inventory Value
 function calculateInventoryValue (inventory) {
@@ -106,11 +102,10 @@ function processSale (productName,unitsSold ) {
 
 // if product found update stock
 if (product){
-    return updateStock (product,unitsSold);
+    console.log(updateStock (product,unitsSold));
 
 } else {
-    return `error:${productName}the product is not in the inventory.`;
+    console.log(`Error: ${productName} the product is not in the inventory.`);
 }
 }
-let result= processSale('Smartphone',5);
-console.log(result);
+processSale('Smartphone',4);
